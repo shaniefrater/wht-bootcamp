@@ -1,0 +1,22 @@
+{
+  "name": "wht-bootcamp",
+  "version": "1.0.0",
+  "description": "5 week bootcamp with WhiteHat (JS, tdd, bdd etc)",
+  "main": "bag.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaniefrater/wht-bootcamp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaniefrater/wht-bootcamp/issues"
+  },
+  "homepage": "https://github.com/shaniefrater/wht-bootcamp#readme",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
