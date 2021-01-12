@@ -1,10 +1,9 @@
 /**
  * Represents a bag taken as either hand or cabin luggage on an aircraft
  */
-
- // insert comment 
 class Bag {
  
+    colour;
     weight; // not required
 
     /**
@@ -12,7 +11,7 @@ class Bag {
      * 
      * @param {number} weight - the weight of the bag
      */
-    constructor(weight) {
+    constructor(weight, colour) {
         if (!weight) {
             throw new Error('bag must have a weight');
         }

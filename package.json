@@ -4,7 +4,7 @@
   "description": "5 week bootcamp with WhiteHat (JS, tdd, bdd etc)",
   "main": "bag.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,6 @@
   "homepage": "https://github.com/shaniefrater/wht-bootcamp#readme",
   "dependencies": {
     "jest": "^26.6.3"
-  }
+  },
+  "devDependencies": {}
 }
