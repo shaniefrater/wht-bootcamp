@@ -1,6 +1,8 @@
 /**
  * Represents a bag taken as either hand or cabin luggage on an aircraft
  */
+
+ // insert comment 
 class Bag {
  
     weight; // not required
