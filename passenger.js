@@ -1,4 +1,4 @@
-/** Passenger document. */
+// Passenger document.
 function foo() {
 }
 const Person = require('./person')

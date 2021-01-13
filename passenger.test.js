@@ -8,7 +8,7 @@ const Passenger = require('./passenger.js')
 
 describe('Passenger', function () {
     test('Passenger is able to fly', function () {
-        const Jane = new Passenger("Jane", "", "British");
+        const Jane = new Passenger("Jane", "1051005", "British");
         expect(Jane.passportType).toEqual("British");
         expect(Jane.name).toEqual("Jane");
     })
