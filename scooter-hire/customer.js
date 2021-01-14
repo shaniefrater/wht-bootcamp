@@ -9,7 +9,7 @@ class Customer {
 
     constructor (customerName, customerEmail, customerNumber, customerUsername, scooterRef) {
 
-        if (!customerNumber) {
+        if (customerNumber.length > 11) {
         throw new Error ("Number input incorrectly")
         }
 

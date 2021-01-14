@@ -13,8 +13,8 @@ describe('customer', function () {
 
     test('Customer number', function () {
         try {
-            const johnDoe = new Customer ("John Doe", "JohnDoe@gmail.com", "0778569774", "SCOOO68"); 
-            fail();
+            const johnDoe = new Customer ("John Doe", "JohnDoe@gmail.com", "077856977412", "SCOOO68"); 
+            fail("hey");
         
         } catch (err) {
             console.log("Incorrect mobile number input");

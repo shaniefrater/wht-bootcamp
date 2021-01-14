@@ -17,6 +17,7 @@ describe('Airplane', function () {
             
         } catch (err) {
             console.log("Got an error");
+
         }
 
         // expect(flightOne.flightDestination).toEqual("Prague"); //change

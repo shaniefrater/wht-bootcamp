@@ -1,0 +1,44 @@
+@startuml
+
+title Scooter Hire - Class Diagram
+
+
+class Scooter {
+    string chargeStatus
+    string userAssign
+    string activeStatus
+}
+class Customer {
+    string fullName
+    string emailAddress
+    int phoneNo
+    string customerUsername
+    string bookingRef
+    
+}
+class ChargeStation {
+    int capacity
+    int timeRemaining
+}
+class HireLocation {
+    array <Locations> location
+}
+
+class BookingSystem {
+    int totalAvailable
+    int timesAvailable
+}    
+
+class Booking {
+    string userName
+    string fullName
+    string scooterAssigned
+    int bookingRef
+    string finalPrice 
+    void getStatus()
+    int calculatePrice()
+}
+BookingSystem "1" *-- "many" Booking : contains
+BookingSystem "1" *-- "5" HireLocation: contains
+ChargeStation "1" *-- "30" Scooter: contains
+@enduml
