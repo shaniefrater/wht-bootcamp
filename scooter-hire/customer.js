@@ -1,12 +1,13 @@
 // customers for scooter-hire
 
-class customer {
+class Customer {
     customerName;
     customerEmail;
     customerNumber; 
+    customerUsername;
     scooterRef;
 
-    constructor (customerName, customerEmail, customerNumber, scooterRef) {
+    constructor (customerName, customerEmail, customerNumber, customerUsername, scooterRef) {
 
         if (!customerNumber) {
         throw new Error ("Number input incorrectly")
@@ -15,8 +16,9 @@ class customer {
         this.customerName = customerName
         this.customerEmail = customerEmail
         this.customerNumber = customerNumber
+        this.customerUserName = this.customerUsername
         this.scooterRef = scooterRef
     }
 }
 
-module.exports = customer
+module.exports = Customer
