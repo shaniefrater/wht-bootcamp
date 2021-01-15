@@ -2,4 +2,7 @@
 
 title Scooter Hire - Sequence Diagram
 
+Customer --> Scooter Hire System
+
+
 @enduml

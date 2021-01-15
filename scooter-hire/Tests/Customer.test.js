@@ -1,11 +1,11 @@
 // const { test, expect } = require("@jest/globals");
 // const { describe } = require("yargs");
-const Customer = require("./Customer")
+const Customer = require("../Src/Customer")
 
 /* importing the contents of the customer class to allow it (equivalent to java.util) */
 
 describe('customer', function () {
-    test.skip('customer Information', function () {
+    test('customer Information', function () {
         const janeDoe = new Customer ("Jane Doe", "janedoe@gmail.com", "07734565558", "janey150", "SC00065");
         expect(janeDoe.customerNumber).toHaveLength(11);
         expect(janeDoe.customerEmail).toContain("@")
