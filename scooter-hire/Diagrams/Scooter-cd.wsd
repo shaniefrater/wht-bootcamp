@@ -22,6 +22,7 @@ class ChargeStation {
 }
 class HireLocation {
     array <Locations> location
+    array <Scooters Available> Scooters
 }
 
 class BookingSystem {
