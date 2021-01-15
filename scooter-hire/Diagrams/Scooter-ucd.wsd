@@ -14,12 +14,12 @@ rectangle ScooterHireSystem {
     usecase "Hire Scooter" as UC1
     usecase "Drive Scooter" as UC2
     usecase "Return Scooter" as UC3
-    usecase "MOT" as UC5
+    usecase "MOT Check" as UC5
     usecase "Charge Scooter" as UC4
 }
 
 rectangle MaintenanceFunctions {
-    usecase "MOT Check" as MF1
+    usecase "MOT" as MF1
     usecase "Battery Check" as MF2
     usecase "Return to Charge Station" as MF3
 }

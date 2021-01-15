@@ -1,8 +1,11 @@
 @startuml
 
-title Scooter Hire - Sequence Diagram
-
-Customer --> Scooter Hire System
-
+Customer -> BookingSystem: Login input
+Customer -> BookingSystem: Requests time available
+BookingSystem->BookingSystem: Search DB for times
+BookingSystem -> Customer: Times fed back
+BookingSystem -> Customer: Prices Available
+Customer -> BookingSystem: Request to book
+BookingConfirmation -> Customer
 
 @enduml
