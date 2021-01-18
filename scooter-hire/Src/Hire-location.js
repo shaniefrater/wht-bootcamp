@@ -30,4 +30,4 @@ class Location {
     }
 }
 
-module.exports = Locations;
+module.exports = Location;
