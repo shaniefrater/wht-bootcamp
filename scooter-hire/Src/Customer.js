@@ -1,5 +1,7 @@
-// customers for scooter-hire
-
+/** 
+ * Represents customers wanting to hire a scooter
+ */
+  
 class Customer {
     customerName;
     customerEmail;

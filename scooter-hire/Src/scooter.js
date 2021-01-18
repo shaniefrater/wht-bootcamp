@@ -1,4 +1,6 @@
-// scooter information
+/** 
+ * Represents the scooter customers are wanting to hire
+ */
 
 class scooter {
     scooterRef;
