@@ -13,11 +13,11 @@ class Customer {
     /** 
      * Constructs an instance of customer information ready to process
      
-     * @param {String} customerName
-     * @param {String} customerEmail
-     * @param {String} customerNumber
-     * @param {String} customerUsername
-     * @param {String} scooterRef
+     * @param {String} customerName - Full name of customer
+     * @param {String} customerEmail - Full email address
+     * @param {String} customerNumber - Primary contact number
+     * @param {String} customerUsername - Username
+     * @param {String} scooterRef - Scooter referenced with account (if any)
     */
     constructor (customerName, customerEmail, customerNumber, customerUsername, scooterRef) {
 
