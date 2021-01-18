@@ -2,22 +2,21 @@
  * Display all locations available where a customer can hire scooters
  */
 
-class Locations {
-
-    /** 
-     * Locations listed when choosing to hire a scooter
-     
-     * @param {String} branchName
-     * @param {String} branchEmail
-     * @param {String} branchRefNo
-     * @param {String} scootersAvailable
-    */
+class Location {
 
     branchName;
     branchEmail;
     branchRefNo;
     scootersAvailable;
 
+    /** 
+     * Constructs an instance of locations listed for the customer when selecting a location
+     
+     * @param {String} branchName - Name of London Branch
+     * @param {String} branchEmail - Email address for particular branch
+     * @param {String} branchRefNo - Contact Number
+     * @param {String} scootersAvailable - Scooters available for hire
+    */
     constructor (branchName, branchEmail, branchRefNo, scootersAvailable) {
 
         if (scootersAvailable < 0) {
