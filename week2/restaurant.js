@@ -1,28 +1,22 @@
 const sqlite3 = require('sqlite3').verbose();
-
 const db = new sqlite3.Database('./restaurant.sqlite');
-
 /**
  * Executes the SQL statements one at a time.
  */
-
 db.serialize(function () {
-    
+
     try {
         // create the empty table with specific columns and column types
-
-        db.run("DROP TABLE RESTAURANT");
-        db.run("DROP TABLE MENU");
-        db.run("DROP TABLE MENUITEM");
-
-        db.run("CREATE TABLE RESTAURANT (RestaurantID, Name, Location, Link)");
-        db.run("CREATE TABLE MENU (ID integer primary key AUTOINCREMENT, MenuID, Title, RestaurantID)");
-        db.run("CREATE TABLE MENUITEM (ItemID, Name, MenuID)");
-
+        db.run("DROP TABLE IF EXISTS RESTAURANT")
+        db.run("DROP TABLE IF EXISTS MENU")
+        db.run("DROP TABLE IF EXISTS MENUITEM")
+        
+        db.run("CREATE TABLE IF NOT EXISTS RESTAURANT (RestaurantID PRIMARY KEY, Name, Location, Link, FOREIGN KEY (RestaurantID) REFERENCES MENU(RestaurantID));");
+        db.run("CREATE TABLE IF NOT EXISTS MENU (ID integer PRIMARY KEY AUTOINCREMENT, MenuID, Title, RestaurantID, FOREIGN KEY (MenuID) REFERENCES MENUITEM(MenuID))");
+        db.run("CREATE TABLE IF NOT EXISTS MENUITEM (ItemID PRIMARY KEY, Name, MenuID)");
         let stmt;
-
         try {
-            stmt = db.prepare(`INSERT INTO RESTAURANT VALUES  
+            stmt = db.prepare(`INSERT INTO RESTAURANT (RestaurantID, Name, Location, Link) VALUES  
                         ('1', 'Wingmans', 'Kilburn', 'https://shop.wingmans.co.uk/') , 
                         ('2', 'Shake Shack', 'Leicester Square', 'https://www.shakeshack.co.uk/') , 
                         ('3', 'Chick n Sours', 'Islington', 'https://www.chicknsours.co.uk/') ,
@@ -32,10 +26,9 @@ db.serialize(function () {
             stmt.run();
         } finally {
             stmt.finalize(); // releases any any internal resources and deallocates any memory
-          }
-
+        }
         try {
-            stmt = db.prepare(`INSERT INTO MENU VALUES (MenuID, Title, RestaurantID)
+            stmt = db.prepare(`INSERT INTO MENU (MenuID, Title, RestaurantID) VALUES 
                         ('APT', 'Appetisers', '1') , 
                         ('WNG', 'Wings', '1') , 
                         ('SDE', 'Sides', '1') ,
@@ -61,12 +54,10 @@ db.serialize(function () {
                         ('SDE', 'Sides', '6') ,
                         ('DNK', 'Drinks', '6')`);
             stmt.run();
-
         } finally {
             stmt.finalize(); // releases any any internal resources 
             // and deallocates any memory
         }
-
         try {
             stmt = db.prepare(`INSERT INTO MENUITEM VALUES 
                         ('100', 'Honey Glazed Wings', 'WNG')`);
@@ -74,19 +65,16 @@ db.serialize(function () {
         } finally {
             stmt.finalize(); // releases any any internal resources and deallocates any memory
         }
-
         // select the rows and print them
         db.each("SELECT * FROM Restaurant", function (err, rows) {
-
-        // console.log(rows);
-
-        // SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
-        // FROM Orders
-        // INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
-        //SELECT Restaurant.RestaurantID, Menu.RestaurantID FROM Restaurant
-        //INNER JOIN Restaurant ON Menu.RestaurantID=Restaurant.RestaurantID;
+            console.log(rows);
+            // SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+            // FROM Orders
+            // INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+            //SELECT Restaurant.RestaurantID, Menu.RestaurantID FROM Restaurant
+            //INNER JOIN Restaurant ON Menu.RestaurantID=Restaurant.RestaurantID;
         });
-    } finally { 
+    } finally {
         db.close();
     }
 });

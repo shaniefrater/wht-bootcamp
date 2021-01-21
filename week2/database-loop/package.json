@@ -1,15 +1,14 @@
 {
-  "name": "week2",
+  "name": "database-loop",
   "version": "1.0.0",
   "description": "",
-  "main": "dbconnect.js",
+  "main": "initialiseDB.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "json": "^10.0.0",
     "sqlite3": "^5.0.0"
   }
 }
