@@ -14,9 +14,9 @@ function initialize() {
             db.run("DROP TABLE IF EXISTS MENU")
             db.run("DROP TABLE IF EXISTS MENUITEM")
 
-            db.run("CREATE TABLE IF NOT EXISTS RESTAURANT (Name TEXT, Menu TEXT, Image TEXT)");
-            db.run("CREATE TABLE IF NOT EXISTS MENU (Title TEXT, Items TEXT)");
-            db.run("CREATE TABLE IF NOT EXISTS MENUITEM (menu_id TEXT, name TEXT, price TEXT)");
+            db.run("CREATE TABLE IF NOT EXISTS RESTAURANT (Name TEXT, Image TEXT)");
+            db.run("CREATE TABLE IF NOT EXISTS MENU (Title TEXT, RestaurantID INTEGER)");
+            db.run("CREATE TABLE IF NOT EXISTS MENUITEM (ID integer PRIMARY KEY AUTOINCREMENT, menu_id TEXT, name TEXT, price INTEGER)");
         });
     } finally {
         db.close();

@@ -15,16 +15,16 @@ async function load() {
     console.log(restaurants);
 
     // loop through the restaurantsArray to get hold of the list of restaurants
-    for (let i = 0; i < restaurantsArray.length; i++) {
-        console.log(restaurantsArray[i].name); // printing name of each restaurant
+    //for (let i = 0; i < restaurantsArray.length; i++) {
+        //console.log(restaurantsArray[i].name); // printing name of each restaurant
 
         // loop through the menus associated with the restaurant
-        for (let j = 0; j < restaurantsArray[i].menu.length; j++) {
-            console.log(restaurantsArray[i].menu[j].title);   // printing title of each menu
+       //// for (let j = 0; j < restaurantsArray[i].menu.length; j++) {
+           // console.log(restaurantsArray[i].menu[j].title);   // printing title of each menu
 
         // add additional loops
-        }
-    }
+       // }
+  //  }
 }
 // main flow
 
