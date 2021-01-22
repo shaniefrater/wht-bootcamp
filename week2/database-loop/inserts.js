@@ -40,15 +40,10 @@ async function load() {
 
                     try {
                         menusstmt = db.prepare(`INSERT INTO MENU (Title, RestaurantID) VALUES (?, ?)`);
-                        menusstmt.run(currentMenu.title, i+1);
+                        menusstmt.run(currentMenu.title, i + 1);
                     } finally {
                         menusstmt.finalize(); // releases any any internal resources and deallocates any memory
                     }
-
-                    //////
-
-
-                    //console.log(currentMenu.menuitems)
 
                     for (let k = 0; k < currentMenu.items.length; k++) {
                         const currentMenuItem = currentMenu.items[k]
@@ -59,7 +54,7 @@ async function load() {
 
                         try {
                             menuitemstmt = db.prepare(`INSERT INTO MENUITEM (name, price, menu_id) VALUES (?, ?, ?)`);
-                            menuitemstmt.run(currentMenuItem.name, currentMenuItem.price, j+1);
+                            menuitemstmt.run(currentMenuItem.name, currentMenuItem.price, j + 1);
                         } finally {
                             menuitemstmt.finalize();
                         }
