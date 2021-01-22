@@ -2,7 +2,7 @@
  * Represents charging stations for scooters
  */
 
-class chargeStatus {
+class ChargeStatus {
     
     branchName;
     capacity;
@@ -21,7 +21,7 @@ class chargeStatus {
         this.branchName - branchName
         this.capacity = capacity
         this.unavailableToRent = unavailableToRent
-        this.totalAvailable = this.totalAvailable
+        this.totalAvailable = totalAvailable
     }
 
     getTotal () {
@@ -29,4 +29,4 @@ class chargeStatus {
     }
  }
 
-module.exports = chargeStatus;
+module.exports = ChargeStatus;

@@ -1,4 +1,4 @@
-const chargeStatus = require ("../Src/Charge-station")
+const chargeStatus = require ("../Src/ChargeStation")
 
 /* importing the contents of classes to allow it to feature here (equivalent to java.util) */
 

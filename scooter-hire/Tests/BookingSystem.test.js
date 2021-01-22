@@ -1,4 +1,4 @@
-const System = require ("../Src/Booking-system")
+const System = require ("../Src/BookingSystem")
 
 /* importing the contents of classes to allow it to feature here (equivalent to java.util) */
 

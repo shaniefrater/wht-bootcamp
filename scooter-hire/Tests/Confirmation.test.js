@@ -1,4 +1,4 @@
-const Confirmation = require ("../Src/Booking-confirmation")
+const Confirmation = require ("../Src/Confirmation")
 
 /* importing the contents of classes to allow it to feature here (equivalent to java.util) */
 

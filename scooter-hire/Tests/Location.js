@@ -1,4 +1,4 @@
-const Location = require("../Src/Hire-location")
+const Location = require("../Src/Location")
 
 /* importing the contents of the location class to allow it to feature here (equivalent to java.util) */
 
