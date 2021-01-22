@@ -16,7 +16,7 @@ class ChargeStatus {
      * @param {String} unavailableToRent - No. of scooters unavailable to rent due to insufficient battery levels
      * @param {String} totalAvailable - No. of scooters available with 100% battery
     */
-    constructor (branchName, capacity, unavailableToRent) {
+    constructor (branchName, capacity, unavailableToRent, totalAvailable) {
 
         this.branchName - branchName
         this.capacity = capacity

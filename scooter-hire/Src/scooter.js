@@ -17,7 +17,7 @@ class Scooter {
     */
     constructor (scooterRef, chargeStatus, branchOwner) {
 
-        if (chargeStatus < 100)
+        if (chargeStatus < "100")
         throw new Error ('Insufficient Battery Level, unavailable to rent')
 
         this.scooterRef = scooterRef

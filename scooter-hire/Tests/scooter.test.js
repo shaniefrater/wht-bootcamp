@@ -1,6 +1,6 @@
-const customer = require("../Src/Customer")
+const Customer = require("../Src/Customer")
 const Scooter = require("../Src/scooter")
-const Location = require ("../Src/Hire-location")
+// const Location = require ("../Src/Location")
 
 /* importing the contents of classes to allow it to feature here (equivalent to java.util) */
 
@@ -12,8 +12,8 @@ describe('Scooter', function () {
     })
 
     test('SC002 availability to rent', function () {
-        const scooter2 = new Scooter ('SCOO2', 100, "London Paddington");
+        const scooter2 = new Scooter ('SCOO2', "100", "London Paddington");
         expect(scooter2.branchOwner).toBeTruthy["London Paddington"];
-        expect(scooter2.chargeStatus).toEqual(100);
+        expect(scooter2.chargeStatus).toEqual("100");
     })
 })

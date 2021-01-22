@@ -19,9 +19,9 @@ class Location {
     */
     constructor (branchName, branchEmail, branchRefNo, scootersAvailable) {
 
-        if (scootersAvailable < 0) {
-            throw new Error ("There are currently no available scooters to hire, please try again later or suggest an alternative branch")
-            }
+        //if (scootersAvailable < 0) {
+          //  throw new Error ("There are currently no available scooters to hire, please try again later or suggest an alternative branch")
+          //  }
 
         this.branchname = branchName
         this.branchEmail = branchEmail
