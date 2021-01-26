@@ -1,5 +1,5 @@
-const {sequelize, Sequelize, DataTypes, Model} = require('./sequelize_index');
-const {MenuItem} = require('./MenuItem')
+const { sequelize, Sequelize, DataTypes, Model } = require('./sequelize_index');
+const { MenuItem } = require('./MenuItem')
 
 /**
  * Represents a Menu
@@ -11,22 +11,23 @@ class Menu extends Model {
 }
 
 Menu.init({
-    title: DataTypes.STRING}, {
+    title: DataTypes.STRING
+}, {
     sequelize,
     timestamps: false
 });
 
-Menu.hasMany(MenuItem, { foreignKey: 'menu_id' });
-MenuItem.belongsTo(Menu, {foreignKey: 'menu_id' });
+Menu.hasMany(MenuItem, {foreignKey: 'menu_id'});
+MenuItem.belongsTo(Menu, {foreignKey: 'menu_id'});
 
-module.exports = {Menu};
+module.exports = { Menu };
 
 // local testing - remove when using Jest
-/*(async () => {
+(async () => {
     await sequelize.sync({ force: true });
     const m = await Menu.create({ title: 'Grill'})
     console.log("Inserted menu title is:" + m.title);
-})();*/
+})();
 
 
 
