@@ -1,0 +1,61 @@
+* {                 /* applies to all elements */
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url("https://i.pinimg.com/originals/de/37/8b/de378b03af0b4a50d83991d2607c92a0.jpg");
+    background-color: #cccccc;
+   }
+
+/* css defaults for mobile devices */
+
+h1 {
+    width:500px;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: solid 1px black;
+    padding: 1rem;
+}
+
+article {
+    border: solid 1px black;   /* adds a border around the box */
+    width: calc(100% - 2rem);
+    height: 35em;
+    margin: 1rem 1rem;
+}
+
+article header {
+    height: 24rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+@media screen and (min-width: 40em) {
+    /* css overrides for mid-sized screens goes here */
+      section {
+          margin: 1rem;
+          display: grid;
+          grid-template-columns: auto auto;
+          grid-template-rows: none;
+          gap: 1rem;
+      }
+      article {
+          margin: 0;
+          width: 100%;
+      }
+  }
+
+  @media screen and (min-width: 60em) {
+    /* css overrides for large screens goes here */
+    section {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+dl div{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}

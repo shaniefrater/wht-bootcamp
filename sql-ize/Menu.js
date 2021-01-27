@@ -17,17 +17,17 @@ Menu.init({
     timestamps: false
 });
 
-Menu.hasMany(MenuItem, {foreignKey: 'menu_id'});
+Menu.hasMany(MenuItem, {as: 'items', foreignKey: 'menu_id'});
 MenuItem.belongsTo(Menu, {foreignKey: 'menu_id'});
 
 module.exports = { Menu };
 
 // local testing - remove when using Jest
-(async () => {
+/* (async () => {
     await sequelize.sync({ force: true });
     const m = await Menu.create({ title: 'Grill'})
     console.log("Inserted menu title is:" + m.title);
-})();
+})(); */
 
 
 
