@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("https://media.istockphoto.com/photos/newspaper-with-old-grunge-vintage-unreadable-paper-texture-background-picture-id1130355559?b=1&k=6&m=1130355559&s=612x612&w=0&h=likqSdAy6e92f3G433HI5sO3RoWAtgUfreVDAtcvVfE=");
+    background-image: url("https://t3.ftcdn.net/jpg/03/54/96/98/360_F_354969808_ic4xcyLg4dUxOwVcgEtyM0g6Bx4LkXTJ.jpg");
     background-color: #cccccc;
    }
 
@@ -32,6 +32,8 @@ article header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    align-items: flex-start;
+    text-align: center;
 }
 
 @media screen and (min-width: 40em) {
@@ -61,3 +63,15 @@ dl div{
     justify-content: space-between;
     padding: 1rem;
 }
+
+menu {                /* applies to all elements */
+        padding: 0;
+        margin: 0;
+    }
+    
+    body {
+        background-image: url("https://t3.ftcdn.net/jpg/03/54/96/98/360_F_354969808_ic4xcyLg4dUxOwVcgEtyM0g6Bx4LkXTJ.jpg");
+        background-color: #cccccc;
+       }
+    
+    /* css defaults for mobile devices */

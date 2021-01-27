@@ -41,12 +41,14 @@ app.get('/', (request, response) => {
 // We need a route that also has a route parameter. Add the new route below to your server.
 
 app.get('/restaurants/:id', async (req, res) => {
-    const restaurant = await Restaurant.findByPk(1)
+    const restaurant = await Restaurant.findByPk(req.params.id)
+    console.log(req.params.id)
     console.log("Found Restaurant" + restaurant) 
     const menus = await restaurant.getMenus({
         include: [{model: MenuItem, as: 'items'}],
         nest: true
     })
+    console.log(menus)
     res.render('restaurant', {restaurant, menus})
 })
 
