@@ -4,25 +4,27 @@
 }
 
 body {
-    background-image: url("https://i.pinimg.com/originals/de/37/8b/de378b03af0b4a50d83991d2607c92a0.jpg");
+    background-image: url("https://media.istockphoto.com/photos/newspaper-with-old-grunge-vintage-unreadable-paper-texture-background-picture-id1130355559?b=1&k=6&m=1130355559&s=612x612&w=0&h=likqSdAy6e92f3G433HI5sO3RoWAtgUfreVDAtcvVfE=");
     background-color: #cccccc;
    }
 
 /* css defaults for mobile devices */
 
 h1 {
-    width:500px;
+    width:800px;
     margin: 0 auto;
     text-align: center;
-    border-bottom: solid 1px black;
+    border-bottom: solid 3px black;
     padding: 1rem;
 }
 
 article {
-    border: solid 1px black;   /* adds a border around the box */
+    border: solid 3px black;  /* adds a border around the box */
     width: calc(100% - 2rem);
-    height: 35em;
-    margin: 1rem 1rem;
+    height: 27em;
+    margin: 10rem 10rem;
+    border-radius: 25px;
+    background: white
 }
 
 article header {
