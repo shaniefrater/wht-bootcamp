@@ -42,6 +42,10 @@ app.get('/', (request, response) => {
 
 app.get('/restaurants/:id', async (req, res) => {
     const restaurant = await Restaurant.findByPk(req.params.id)
+    if (!restaurant) {
+        res.redirect ("/")
+    return}
+
     console.log(req.params.id)
     console.log("Found Restaurant" + restaurant) 
     const menus = await restaurant.getMenus({
@@ -52,10 +56,29 @@ app.get('/restaurants/:id', async (req, res) => {
     res.render('restaurant', {restaurant, menus})
 })
 
-// this route matches any GET request to the http://localhost:3000/about
-app.get('/about', (request, response) => {
-    response.render('about', {date: new Date(), author:'multiverse'})
+app.get('/home', (request, response) => {
+    response.redirect('/')
 })
+
+app.get('/about', (request, response) => {
+    response.render('about')
+})
+app.get('/new', (request, response) => {
+    response.render('new')
+})
+
+app.post('/restaurants', async (req, res) => {
+    console.log(req.body); // this is the JSON body
+
+    // TODO - add code to insert data into the database!
+
+    res.redirect('/')
+})
+
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+
+// this route matches any GET request to the http://localhost:3000/about
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`)

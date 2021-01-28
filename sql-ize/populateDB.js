@@ -34,8 +34,9 @@ async function loadAndInsert() {
 
                 await MenuItem.create ({name: currentMenuItem.name, price: currentMenuItem.price, menu_id: menuCounter})
             }
+            menuCounter++;
         }
-        menuCounter++;
+        
     }
 }
 

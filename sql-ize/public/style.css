@@ -1,6 +1,6 @@
 * {                 /* applies to all elements */
-    padding: 0;
-    margin: 0;
+    padding: 2.5px;
+    margin: 2.5px;
 }
 
 body {
@@ -21,7 +21,7 @@ h1 {
 article {
     border: solid 3px black;  /* adds a border around the box */
     width: calc(100% - 2rem);
-    height: 27em;
+    height: auto;
     margin: 10rem 10rem;
     border-radius: 25px;
     background: white
@@ -34,6 +34,7 @@ article header {
     background-position: center center;
     align-items: flex-start;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 @media screen and (min-width: 40em) {
@@ -75,3 +76,37 @@ menu {                /* applies to all elements */
        }
     
     /* css defaults for mobile devices */
+
+    /* CSS for navbar */
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(8, 8, 8);
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      /* Change the link color to #111 (black) on hover */
+      li a:hover {
+        background-color: rgb(116, 20, 103);
+      }
+
+      .image2 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+      
