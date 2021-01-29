@@ -1,16 +1,19 @@
-
-
 <h1>RESTAURANTS</h1>
 <section>
     {{#each restaurants}}
     <a href="/restaurants/{{this.id}}">
         <article>
-            <div class="image">
-                <header style="background-image: url({{this.image}});" width="300" height="400";></header>
+            <div>
+                <header class="mainimage" style="background-image: url({{this.image}});"></header>
+                <main>{{this.name}}</main>
+                <footer>{{this.menus.length}} menus</footer>
+                <!-- <a style="float: left;" href="./restaurants/{{this.id}}/delete"><button>Delete</button></a> -->
             </div>
-            <main>{{this.name}}</main>
-            <footer>{{this.menus.length}} menus</footer>
         </article>
     </a>
     {{/each}}
 </section>
+
+<!-- <a href="./restaurants/{{this.id}}/delete" button class="c-btn c-btn--danger c-btn--small">Delete<i class="c-icon c-icon--trash c-icon--after"></i></button> -->
+<!-- <a href="./restaurants/{{this.id}}/delete" button class="c-btn c-btn--danger c-btn--small">Delete<i class="c-icon c-icon--trash c-icon--after"></i></button> -->
+<!-- <a style="float: left;" href="./restaurants/{{this.id}}/delete"><button>Delete</button></a> -->

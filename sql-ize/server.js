@@ -78,6 +78,27 @@ app.post('/restaurants', async (req, res) => {
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+// add a delete button into restaurant
+app.get('/restaurants/:id/delete', (req, res) => {
+    Restaurant.findByPk(req.params.id)
+        .then(restaurant => {
+            restaurant.destroy()
+            res.redirect('/')
+        })
+})
+
+//edit restaurant
+app.get('/restaurants/:id/edit', async (req, res) => {
+    const restaurant = await Restaurant.findByPk(req.params.id)
+    res.render('edit', {restaurant})
+})
+
+app.put('/restaurants/:id/edit', async (req, res) => {
+    const restaurant = await Restaurant.findByPk(req.params.id)
+    await restaurant.update(req.body)
+    res.redirect(`/restaurants/${restaurant.id}`)
+})
+
 // this route matches any GET request to the http://localhost:3000/about
 
 app.listen(port, () => {

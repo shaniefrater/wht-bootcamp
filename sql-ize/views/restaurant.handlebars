@@ -1,18 +1,42 @@
-
 <h1>{{restaurant.name}}</h1>
-
 <section class="menu">
     {{#each menus}}
-        <article>
-            <h2>{{this.title}}</h2>
-            <dl>
-                {{#each this.items}}
-                    <div>
-                        <dt>{{this.name}}</dt>
-                        <dd>£{{this.price}}</dd>
-                    </div>
-                {{/each}}
-            </dl>
-        </article>
+    <article>
+        <h2>{{this.title}}</h2>
+        <dl>
+            {{#each this.items}}
+            <div>
+                <dt>{{this.name}}</dt>
+                <dd>£{{this.price}}</dd>
+            </div>
+            {{/each}}
+        </dl>
+    </article>
     {{/each}}
 </section>
+
+
+
+<a href="#open-modal">Leave feedback</a>
+<div id="open-modal" class="modal-window">
+    <div>
+        <h2>How was your experience?</h2>
+        <div class="rate" style="background-color: white;">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star1" title="text">1 star</label>
+            <input type="radio" id="star2" name="rate" value="4" />
+            <label for="star2" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star4" name="rate" value="2" />
+            <label for="star4" title="text">2 stars</label>
+            <input type="radio" id="star5" name="rate" value="1" />
+            <label for="star5" title="text">1 star</label>
+        </div>
+        <div>
+            <span style="white-space: pre-line"></span>
+            <span style="white-space: pre-line"></span>
+            <span style="white-space: pre-line"></span>
+        </div>
+        <a href="#modal-close" title="Close" class="modal-close">close &times;</a>
+    </div>
