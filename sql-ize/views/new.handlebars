@@ -4,11 +4,11 @@
 <p style="background-color: white;"> We're always open to changes and user input as we're a community. If you have
     anything to add, please do! </p>
 <form action="/restaurants" method="POST">
-    <label>Name:</label><br>
-    <input type="text" name="name" required placeholder="Name"> <br>
+    <label aria-label="Option to insert Restaurant Name">Name:</label><br>
+    <input type="text" name="name" required placeholder="Name" alt="Name of Restaurant"> <br>
 
-    <label>Image:</label><br>
-    <input type="url" name="image" required placeholder="https://www.images.google.com"><br><br>
+    <label aria-label="Option to insert URL of Image">Image:</label><br>
+    <input type="url" name="image" required placeholder="https://www.images.google.com" alt="Restaurant website URL"><br><br>
 
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" alt="Submit Button">
 </form>
