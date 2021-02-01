@@ -1,10 +1,10 @@
 const express = require('express');
 const Handlebars = require('handlebars')
 const expressHandlebars = require('express-handlebars')
-const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
-const {Restaurant} = require('./Restaurant')
-const {Menu} = require('./Menu')
-const {MenuItem} = require('./MenuItem')
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
+const { Restaurant } = require('./Restaurant')
+const { Menu } = require('./Menu')
+const { MenuItem } = require('./MenuItem')
 
 const app = express();
 const port = 3000;
@@ -24,17 +24,17 @@ app.get('/', async (req, res) => {
         include: [
             {
                 model: Menu, as: 'menus',
-                include: [{model:MenuItem, as: 'items'}]
+                include: [{ model: MenuItem, as: 'items' }]
             }
         ],
         nest: true
     })
-    res.render('home', {restaurants})
+    res.render('home', { restaurants })
 })
 
 // this route matches any GET request to the top level URL
 app.get('/', (request, response) => {
-    response.render('restaurants', {date: new Date()})
+    response.render('restaurants', { date: new Date() })
 })
 
 
@@ -43,17 +43,18 @@ app.get('/', (request, response) => {
 app.get('/restaurants/:id', async (req, res) => {
     const restaurant = await Restaurant.findByPk(req.params.id)
     if (!restaurant) {
-        res.redirect ("/")
-    return}
+        res.redirect("/")
+        return
+    }
 
     console.log(req.params.id)
-    console.log("Found Restaurant" + restaurant) 
+    console.log("Found Restaurant" + restaurant)
     const menus = await restaurant.getMenus({
-        include: [{model: MenuItem, as: 'items'}],
+        include: [{ model: MenuItem, as: 'items' }],
         nest: true
     })
     console.log(menus)
-    res.render('restaurant', {restaurant, menus})
+    res.render('restaurant', { restaurant, menus })
 })
 
 app.get('/home', (request, response) => {
@@ -90,7 +91,7 @@ app.get('/restaurants/:id/delete', (req, res) => {
 //edit restaurant
 app.get('/restaurants/:id/edit', async (req, res) => {
     const restaurant = await Restaurant.findByPk(req.params.id)
-    res.render('edit', {restaurant})
+    res.render('edit', { restaurant })
 })
 
 app.put('/restaurants/:id/edit', async (req, res) => {
@@ -99,8 +100,8 @@ app.put('/restaurants/:id/edit', async (req, res) => {
     res.redirect(`/restaurants/${restaurant.id}`)
 })
 
-// this route matches any GET request to the http://localhost:3000/about
+    // this route matches any GET request to the http://localhost:3000/about
 
-app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`)
-})
+    app.listen(port, () => {
+        console.log(`Server listening at http://localhost:${port}`)
+    })
