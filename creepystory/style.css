@@ -1,0 +1,67 @@
+body {
+    margin: 20px;
+    font-family: 'Text Me One', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  body.dark {
+    color: white;
+    background: black;
+  }
+  
+  h1 {
+    font-family: 'Creepster', cursive;
+    font-weight: normal;
+    font-size: 60px;
+    margin: 5px;
+  }
+  
+  button {  
+    display: block;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .textEntry {
+    margin-top: 12px;
+    margin-bottom: 15px;
+  }
+
+  .animationButton {
+
+    position: relative;
+    animation-name: shake;
+    animation-duration: 1s;
+        
+    animation-timing-function: ease-in;
+    cursor: pointer;
+    }
+    
+    .animationButton:hover {
+    animation-name: shakeAnim;
+    background-color: rgb(255, 25, 25);
+    }
+      
+      @keyframes shakeAnim {
+        0% {left: 0}
+        1% {left: -3px}
+        2% {left: 5px}
+        3% {left: -8px}
+        4% {left: 8px}
+        5% {left: -5px}
+        6% {left: 3px}
+        7% {left: 0}
+      }
+      
+      @keyframes shake {
+        0% {left: 0}
+        1% {left: -3px}
+        2% {left: 5px}
+        3% {left: -8px}
+        4% {left: 8px}
+        5% {left: -5px}
+        6% {left: 3px}
+        7% {left: 0}
+      }
