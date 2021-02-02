@@ -1,0 +1,33 @@
+body {
+    margin: 10px;
+  }
+  
+  .glyphicon-move {
+    cursor: move;
+    cursor: -webkit-grabbing;
+  }
+
+  .list-group-item {
+    background-color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    padding: 1rem;
+    border: 3px solid  rgb(146, 146, 146);
+}
+
+.list-group {
+    background-color: rgb(146, 146, 146);
+    padding: 1rem;
+    margin-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
